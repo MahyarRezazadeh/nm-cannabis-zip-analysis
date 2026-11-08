@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{County-level border premium under the entry-cap interaction: full regression results}
+\label{tab:capped_regression_journal}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+ & (1) & (2) & (3) \\
+ & Revenue per capita & Revenue per store & Dispensary density \\
+\midrule
+$\text{Border}_c$ & $+0.860^{***}$ & $+0.619$ & $+0.241$ \\
+ & (0.240) & (0.400) & (0.320) \\
+$\text{Border}_c \times \text{Capped}_c$ & $-0.720^{**}$ & $-0.439$ & $-0.126$ \\
+ & (0.295) & (0.367) & (0.253) \\
+\midrule
+State FE & Yes & Yes & Yes \\
+Quarter FE & Yes & Yes & Yes \\
+State $\times$ Quarter FE & Yes & Yes & Yes \\
+\midrule
+Observations & 3191 & 1720 & 1720 \\
+Counties & 140 & 126 & 126 \\
+$R^2$ & 0.270 & 0.284 & 0.325 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Dependent variable is the log outcome named in each column heading. Sample: Colorado, Oregon, Montana, and New Mexico county-quarter panel (Washington dropped), truncated to 2025Q2 or earlier. $\text{Border}_c$ = 1 if county $c$'s centroid lies within 75 miles of the nonlegal-state line, with $\geq$1,000 nonlegal-state residents within that reach. $\text{Capped}_c$ is the state-year entry-cap indicator (Colorado and Montana capped throughout, New Mexico free throughout, Oregon switching to capped entry in 2022); its own main effect is exactly collinear with the state $\times$ quarter fixed effects (a state-year variable absorbed by a strictly finer fixed effect) and is therefore not separately reported. State and state $\times$ quarter fixed effects are implemented via a single concatenated state-quarter key to avoid the rank deficiency a naive three-term specification produces on this unbalanced panel. Standard errors, clustered at the county level, in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{minipage}
+\end{table}

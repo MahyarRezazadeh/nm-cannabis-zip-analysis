@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{County-level border effect and entry-cap interaction, 100-mile border definition (CO, OR, MT, NM; quarterly)}
+\label{tab:county_border_capped_main_100mi}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{Border} & \multicolumn{2}{c}{Border $\times$ Capped} & \\
+Outcome & Coef. (\%) & $p$ (cl.) & Coef. (\%) & $p$ (cl.) & $n$ \\
+\midrule
+Revenue per capita & $+0.744$ ($+110.4\%$) & 0.001 & $-0.527$ ($-40.9\%$) & 0.055 & 3191 \\
+Revenue per store & $+0.626$ ($+87.0\%$) & 0.060 & $-0.386$ ($-32.1\%$) & 0.222 & 1720 \\
+Dispensary density & $+0.118$ ($+12.5\%$) & 0.677 & $-0.112$ ($-10.6\%$) & 0.597 & 1720 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Sample: CO, OR, MT, NM (Washington dropped). Border = county centroid within 100 miles of the
+nonlegal-state line, with $\geq$1,000 nonlegal-state residents within that reach (loosened from the 75-mile main
+definition in Table~\ref{tab:county_border_capped_main}; 88 of 189 counties qualify as border here vs.\ 56 under
+75 miles). Capped is the state-year entry-cap indicator (CO/MT always capped, NM always free, OR switches capped
+in 2022). State and state $\times$ quarter fixed effects via a single concatenated state-quarter key. County-clustered
+standard errors.
+\end{minipage}
+\end{table}

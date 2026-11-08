@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\caption{New Mexico dispensary-level border effect, with chain/brand fixed effects}
+\label{tab:nm_dispensary_border_brandfe}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+Outcome & Coef. (\%) & $p$ (cl.) & $n$ & Mixed brands & Identifying $n$ \\
+\midrule
+Revenue per capita & $+0.191$ ($+21.1\%$) & 0.337 & 10725 & 56 & 3341 \\
+Revenue (per dispensary) & $+0.087$ ($+9.0\%$) & 0.456 & 10739 & 56 & 3344 \\
+Local dispensary density & $+0.030$ ($+3.0\%$) & 0.883 & 10739 & 56 & 3344 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Same specification as Table~\ref{tab:nm_dispensary_border_main_v2}, adding a chain/brand fixed
+effect mechanically extracted from each dispensary's business name. Brand fixed effects fully absorb the
+border indicator for any chain operating only border or only interior locations; the border coefficient is
+therefore identified only from ``mixed'' chains that operate both. ``Identifying $n$'' reports how many of the
+$n$ observations belong to a mixed chain (roughly 31 percent in every outcome) -- a real precision cost from
+adding brand fixed effects, reported here rather than left implicit.
+\end{minipage}
+\end{table}

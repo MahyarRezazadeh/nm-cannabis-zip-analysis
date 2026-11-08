@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{Marijuana arrests in non-legal border counties around a neighboring state's legalization}
+\label{tab:arrestdid}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+Legalizing neighbor & Treated counties & Control counties & $N$ & DID coef. (\%) & $p$ \\
+\midrule
+Colorado (2014-01) & 10 & 175 & 12,395 & $+0.688$ ($+98.9\%$) & $0.003$ \\
+Arizona (2021-01)  & 4  & 20  & 1,608  & $+0.632$ ($+88.1\%$) & $0.148$ \\
+New Mexico (2022-04) & 33 & 80 & 7,571  & $-0.075$ ($-7.2\%$)  & $0.594$ \\
+\midrule
+Pooled (stacked) & 47 & 175\textsuperscript{a} & 21,574 & $+0.186$ ($+20.4\%$) & $0.148$ \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Dependent variable is $\log(1+\text{marijuana arrests})$ per county-quarter (FBI offense
+codes 158 + 153). Each row is a separate stacked-DID estimate of $\pi$ from equation~\ref{eq:arrestdid},
+restricted to that cohort's own treated and control counties; the pooled row stacks all three cohorts
+together. County and cohort-by-quarter fixed effects; county-clustered standard errors.
+\textsuperscript{a}Unique control counties across all three stacks -- a Texas or Utah interior county can
+serve as a control for more than one cohort, so this is less than the sum of the per-cohort control columns.
+\end{minipage}
+\end{table}

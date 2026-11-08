@@ -1,0 +1,39 @@
+\begin{table}[htbp]
+\centering
+\caption{Sensitivity of the cross-state entry-regime estimate to pre-2022 border classification in Colorado}
+\label{tab:crossstate_timevarying}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+ & Pooled 3-state & New Mexico vs.\ Colorado & Colorado border & Implied 2024 \\
+Specification & $\theta$ ($p$) & $\theta$ ($p$) & premium alone ($p$) & revenue gap \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel A: Revenue per capita}} \\
+(A) Baseline (fixed border)                 & $-0.574$ (0.061) & $-0.696$ (0.048) & $-3.5\%$ (0.90)  & \$326 M \\
+(B) Time-varying, 5 CO--NM-only counties     & $-0.334$ (0.26)  & $-0.365$ (0.27)  & $+34.4\%$ (0.24) & \$143 M \\
+(B2) Time-varying, full CO centroid recompute& $-0.352$ (0.23)  & $-0.387$ (0.24)  & $+31.4\%$ (0.27) & \$153 M \\
+(C) Colorado restricted to 2022Q2--          & $-0.350$ (0.24)  & $-0.458$ (0.24)  & $+22.4\%$ (0.53) & \$188 M \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel B: Dispensary density (unchanged across all four specifications)}} \\
+                                            & $-0.326$ (0.29)  & $-0.932$ (0.056) & $-28.6\%$ (0.40) & -- \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel C: Revenue per dispensary (unchanged across all four specifications)}} \\
+                                            & $-0.198$ (0.44)  & $+0.465$ (0.14)  & $+70.0\%$ (0.03) & -- \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}
+\vspace{0.4em}\footnotesize
+\textit{Notes:} $\theta$ is the $\text{Border}_c \times \text{Restricted}_s$ interaction from
+equation~\ref{entry_barrier_reg}, county-clustered standard errors. Five Colorado counties border only
+New Mexico (La Plata/Durango, Las Animas/Trinidad, Costilla, Conejos, Archuleta) and are all in the
+estimation sample. The baseline codes them interior for the entire 2015--2025 panel using a post-2022
+snapshot; specifications (B), (B2) and (C) instead recognise that New Mexico had no legal recreational
+market before April 2022. (B) sets those five counties to border for years before 2022; (B2) recomputes the
+75-mile centroid rule for every Colorado county year by year, treating New Mexico as nonlegal before 2022
+(this also flips Huerfano and Otero for the pre-2022 years); (C) keeps the baseline border rule but
+restricts Colorado to 2022Q2 onward, matching New Mexico's own window. The implied revenue gap applies the
+New Mexico--Colorado $e^{-\theta}$ multiplier to Colorado's actual 2024 border-county dispensary revenue
+(\$324.2 M). Dispensary density and revenue per dispensary do not change because Colorado's dispensary-count
+data begin in 2022, so the misclassified county-years contribute no observations to those two outcomes.
+\end{minipage}
+\end{table}

@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\caption{Border premium, free entry (New Mexico) vs.\ capped entry (Colorado + Montana), 75 miles}
+\label{tab:county_border_capped_nmcomt_75mi}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{Border (NM, free)} & \multicolumn{2}{c}{Border $\times$ Capped (CO+MT vs.\ NM)} & \\
+Outcome & Coef. (\%) & $p$ (cl.) & Coef. (\%) & $p$ (cl.) & $n$ \\
+\midrule
+Revenue per capita & $+0.695$ ($+100.5\%$) & 0.002 & $-0.603$ ($-45.3\%$) & 0.051 & 2478 \\
+Revenue per store & $+0.083$ ($+8.6\%$) & 0.683 & $-0.147$ ($-13.7\%$) & 0.552 & 1007 \\
+Dispensary density & $+0.613$ ($+84.6\%$) & 0.027 & $-0.404$ ($-33.2\%$) & 0.192 & 1007 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Sample restricted to New Mexico (always free entry) and Colorado + Montana (always capped
+entry) -- Oregon excluded entirely, since it switches regime mid-panel and would contribute to both sides of
+this comparison. Border = county centroid within 75 miles of the nonlegal-state line, with
+$\geq$1,000 nonlegal-state residents within that reach. State and state $\times$ quarter fixed effects via a
+single concatenated state-quarter key. County-clustered standard errors.
+\end{minipage}
+\end{table}

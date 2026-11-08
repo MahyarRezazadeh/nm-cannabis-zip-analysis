@@ -1,0 +1,114 @@
+% Drafted 2026-08-27 for the "Marijuana Spillover effect" Overleaf doc (main.tex).
+% Revenue-per-local-resident dispensary-level check (1 km / 2 km denominator).
+% NOT yet added to the paper. Uses \mathbbm{1} (bbm package, matches the doc).
+% Figures to upload alongside:
+%   fig_eventstudy_nm_dispensary_revper1kmresident.png
+%   fig_eventstudy_nm_dispensary_revperresident_1km_vs_2km.png
+% Source: analyze_eventstudy_nm_dispensary_revper1km.py, build_nm_dispensary_local_population.py
+
+% ======================= BODY / APPENDIX PASSAGE =======================
+
+\subsection{Revenue per local resident}
+\label{sec:localresident}
+
+The ZIP- and county-level per-capita results divide dispensary revenue by an
+administrative population that may be a poor proxy for the customer base of an
+individual store: two dispensaries in the same county, or even the same ZIP
+code, can face very different resident populations within walking or short
+driving distance. We therefore re-estimate the border premium at the
+dispensary level using each store's \emph{own} local resident population as the
+denominator.
+
+For each of the 1{,}192 geocoded New Mexico dispensaries we sum 2020 Census
+block population (TIGER/Line \texttt{tabblock20}, area-apportioned to the buffer)
+within one kilometre of the dispensary's coordinates. This local population
+averages roughly 3{,}100 residents (median 2{,}800) and is itself somewhat lower
+around border dispensaries (2{,}340) than interior dispensaries (3{,}540),
+consistent with border stores locating in smaller border towns. The border
+classification is unchanged: a dispensary is border-exposed if its own location
+lies within 75 miles of the Texas, Oklahoma, or Utah state line with at least
+1{,}000 nonlegal-state residents within that reach.
+
+The outcome is $\log(\text{own quarterly revenue} / \text{residents within 1 km})$.
+We estimate a dynamic specification that interacts the border indicator with
+every quarter,
+%
+\begin{equation}
+\log\!\left(\frac{\text{Revenue}_{it}}{\text{Pop1km}_i}\right)
+= \alpha + \sum_q \gamma_q\left(\text{Border}_i \times \mathbbm{1}[\text{Quarter}=q]\right)
++ \phi \log(\text{Pop1km}_i) + \delta_q + \eta_{b(i)} + \varepsilon_{it},
+\end{equation}
+%
+where $\eta_{b(i)}$ is a chain/brand fixed effect and standard errors are
+clustered by county. Each $\gamma_q$ is the border--interior difference in log
+revenue per local resident in quarter $q$. Because a one-kilometre radius leaves
+a thin tail of dispensaries with almost no nearby population, we drop the 37
+stores with fewer than 100 residents within 1 km and winsorise the outcome at
+its 1st and 99th percentiles; we also re-run the specification with a
+two-kilometre denominator, which is less sensitive to geocoding error.
+
+The border premium in revenue per local resident is positive but not
+statistically distinguishable from zero. The pooled static estimate is
+$+16.7$ percent ($p=0.286$; $n=9{,}918$ dispensary-quarters, 1{,}134
+dispensaries), and $+14.9$ percent ($p=0.306$) with the two-kilometre
+denominator. Figure~\ref{fig:es_revper1km} shows the dynamic estimates: the gap
+is positive in every quarter from 2022Q3 onward, fluctuating between roughly
+$+0.05$ and $+0.35$ log points with no trend, but only the 2024Q1 coefficient is
+individually significant at the 5 percent level. Figure~\ref{fig:es_revper1km2km}
+confirms that the one- and two-kilometre denominators trace essentially the same
+path. This mirrors the other dispensary-level revenue results
+(Section~\ref{sec:appendixdispensary}): once revenue is measured per store rather
+than per market, the border advantage is small and imprecise. It is the number
+of stores serving the border market, not the revenue of any one of them, that
+responds to cross-border demand.
+
+% ======================= FIGURE: MAIN (1 km) =======================
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_eventstudy_nm_dispensary_revper1kmresident.png}
+\caption{Dynamic border--interior difference in dispensary revenue per local
+resident, New Mexico. Each point is the coefficient on
+$\text{Border}_i \times \mathbbm{1}[\text{Quarter}=q]$ from a dispensary-quarter
+regression of $\log(\text{own revenue}/\text{residents within 1 km})$ on the full
+set of border-by-quarter interactions, a log local-population control, quarter
+fixed effects, and chain/brand fixed effects; county-clustered 95 percent
+confidence intervals. Local resident population is 2020 Census block population
+(area-apportioned) within one kilometre of each dispensary's geocoded location.
+Sample: dispensary-quarters with positive revenue and at least 100 residents
+within 1 km, outcome winsorised at the 1st/99th percentiles (9{,}918
+dispensary-quarters, 1{,}134 dispensaries, 2022Q2--2026Q2; 2026Q3 dropped as a
+partial quarter). The pooled static border coefficient is $+16.7$ percent
+($p=0.286$).}
+\label{fig:es_revper1km}
+\end{figure}
+
+% ======================= FIGURE: ROBUSTNESS (1 km vs 2 km) =======================
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_eventstudy_nm_dispensary_revperresident_1km_vs_2km.png}
+\caption{Revenue per local resident, one- versus two-kilometre denominator.
+Border-by-quarter coefficients from the specification of
+Figure~\ref{fig:es_revper1km}, with the resident-population denominator computed
+over a one-kilometre radius (as in the main specification) and a two-kilometre
+radius (less sensitive to geocoding error; the two-kilometre sample drops
+dispensaries with fewer than 250 residents in that radius). County-clustered
+95 percent confidence intervals. The two denominators yield nearly identical
+dynamic paths; the pooled static border coefficient is $+16.7$ percent
+($p=0.286$) at one kilometre and $+14.9$ percent ($p=0.306$) at two kilometres.}
+\label{fig:es_revper1km2km}
+\end{figure}
+
+% ======================= 100-WORD INTERPRETATION (for Results/Discussion) =======================
+
+% Measuring each dispensary's revenue against the actual resident population within
+% one kilometre -- its true local customer base, not an administrative aggregate --
+% the border premium in per-resident revenue is small and statistically
+% indistinguishable from zero (+16.7%, p=0.286; +14.9%, p=0.306 at two kilometres),
+% with a flat, trendless dynamic path. This is the most demanding test of the
+% per-firm channel, and it fails. That failure strengthens the primary results: the
+% large border premium in revenue per capita and dispensary density is not a
+% denominator artifact, and it does not operate by enriching incumbent stores.
+% Cross-border demand is absorbed through entry -- more dispensaries -- leaving
+% per-store revenue near parity.

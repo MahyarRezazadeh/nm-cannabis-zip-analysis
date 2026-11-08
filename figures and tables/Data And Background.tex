@@ -1,0 +1,268 @@
+% =====================================================================
+%  DATA AND BACKGROUND  --  reframed, self-contained section
+%
+%  Replaces the current Section 3 of main.tex. Reframed around the paper's
+%  actual analysis: a New Mexico ZIP-level border-exposure panel, a New
+%  Mexico dispensary-level mechanism check, and a New Mexico vs. Colorado
+%  county-level entry-regime comparison.
+%
+%  Figures/tables are embedded below. The three PNG files must be uploaded
+%  to the project root (they live in "New Mexico project/figures and tables/"
+%  and are also copied to "Latest try/reframe/figures/"):
+%     fig_nm_setting.png
+%     fig1_southwest_map.png          (replaces the old 5-state map)
+%     fig_nm_spatial_inequality.png
+%  New bibliography entries to append to bibliography.bib:
+%     data_background_new_bib_entries.bib
+%
+%  Labels provided so pre-existing \ref{...}s elsewhere resolve:
+%     sec:data, sec:samplecoverage, sec:sources, sec:summarystats,
+%     sec:panelstructure, sec:timevarying, map, fig:dispensary_map,
+%     tab:sample_construction (alias kept), tab:sumstats_nm, tab:sumstats_state
+% =====================================================================
+
+\section{Data and Background}
+\label{sec:data}
+
+The empirical analysis studies two states that share an important feature: each
+operates a legal recreational cannabis market while sharing a long land border
+with states that do not. New Mexico borders Texas, Oklahoma, and Utah, none of
+which has an operating recreational market. Colorado borders Utah, Wyoming,
+Nebraska, Kansas, and Oklahoma, none of which does either. Populations on the
+nonlegal side of these borders are large: roughly 800,000 residents of Texas
+live within 75 miles of the New Mexico line near Las Cruces alone. Dispensaries
+in the border counties of both states therefore face a pool of potential
+customers that interior dispensaries cannot serve as easily. Figure
+\ref{fig:nm_setting} maps the New Mexico setting.
+
+The two states differ in one respect that is central to the paper: how freely
+firms can enter. New Mexico places no limit on the number of retail licenses and
+issues them on an administrative timetable. Colorado sets no statewide license
+cap but delegates licensing to local governments, and by 2019 roughly half of
+its counties had banned recreational cannabis businesses altogether. Holding the
+cross-border demand roughly fixed while varying the entry regime is what lets us
+ask whether a border demand advantage is absorbed through additional entry, as in
+a free-entry market, or through higher revenue at incumbent stores, as under
+constrained entry.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.92\textwidth]{fig_nm_setting.png}
+\caption{The New Mexico setting. New Mexico operates a free-entry recreational
+cannabis market and shares long borders with Texas, Oklahoma, and Utah, none of
+which has a legal recreational market; its other neighbors, Colorado and
+Arizona, do. Open red circles mark the centroids of the 92 New Mexico ZIP codes
+classified as border-exposed (within 75 miles of a nonlegal-state line with at
+least 1,000 nonlegal-state residents in reach); open blue circles mark the 276
+interior ZIP codes. Gold points are the 1,192 geocoded dispensaries operating at
+some point during 2022--2026.}
+\label{fig:nm_setting}
+\end{figure}
+
+\subsection{Recreational cannabis licensing in New Mexico and Colorado}
+\label{sec:timevarying}
+
+\paragraph{New Mexico.} New Mexico legalized recreational cannabis through the
+Cannabis Regulation Act, signed in April 2021 and effective June 29, 2021
+\citep{NMCannabisRegulationAct}. Licensed retail sales began on April 1, 2022.
+The Act is unusually explicit about entry: Section 26-2C-6(J) bars the Cannabis
+Control Division from limiting the number of licensees or the number of licensed
+premises a cannabis establishment may operate. Retail licenses are issued
+administratively on an application basis, with the Division required to approve
+or deny a complete application within a fixed window; there is no lottery, no
+merit-scoring stage, no residency requirement, and no numerical cap. Local
+governments may adopt time, place, and manner rules and density limits within
+statutory bounds, but they cannot prohibit retail cannabis outright. In
+practice, entry has been rapid and geographically dispersed: by the end of our
+sample New Mexico had roughly 700 operating retailers spread across most of its
+33 counties.
+
+\paragraph{Colorado.} Colorado legalized recreational cannabis through Amendment
+64, approved by voters in November 2012, with licensed retail sales beginning
+January 1, 2014 \citep{COAmendment64}. The state imposes no numerical cap on
+retail licenses, but Amendment 64 gives local governments full authority over
+whether and how retail cannabis operates within their borders. A local
+government may prohibit retail marijuana establishments entirely by ordinance or
+ballot measure, or permit them subject to local caps on the number of stores and
+restrictions on their location and hours. A retailer needs both a state license
+from the Marijuana Enforcement Division and a local license. As of April 2019,
+48.4 percent of Colorado counties banned all marijuana businesses
+\citep{PayanBrownSong2021}, so entry in Colorado is best described as locally
+capped even though no statewide cap exists.
+
+\paragraph{Montana.} Montana, which enters only the pooled three-state
+specification in Section~\ref{sec:regimeresults}, legalized recreational
+cannabis through House Bill 701 (2021), with retail sales beginning January 1,
+2022 \citep{MTHB701,MTBallotOptIn}. Entry is restricted in two ways: for the
+first 18 months only existing medical-cannabis providers could obtain adult-use
+licenses, and counties that voted against the 2020 legalization initiative must
+approve adult-use sales by ballot before dispensaries can operate there. We
+therefore code Montana as locally capped.
+
+\subsection{Levels of analysis and sample coverage}
+\label{sec:samplecoverage}
+\label{sec:panelstructure}
+
+The analysis works at three levels. The main border-exposure design
+(Section~\ref{sec:borderexposure}) is a \emph{ZIP-code by quarter} panel for
+New Mexico, covering all 368 populated ZIP codes over 2022Q2 through 2026Q3
+(6,624 ZIP-quarters). The supply-side mechanism check
+(Section~\ref{sec:mechanism}) is a \emph{dispensary by quarter} panel for New
+Mexico, covering 1,192 geocoded dispensaries over the same window (10,739
+dispensary-quarters). The cross-state entry-regime comparison
+(Section~\ref{sec:crossstate}) is a \emph{county by quarter} panel for New
+Mexico and Colorado, 2015Q1 (Colorado) or 2022Q2 (New Mexico) through 2025Q2.
+
+The ZIP and dispensary panels for New Mexico are balanced: monthly
+licensee-level reporting lets us observe every ZIP code and every dispensary in
+every quarter, with a genuine zero for ZIP codes and quarters that record no
+sales. The county panel is unbalanced. A county enters the estimation sample in
+the first year it reports dispensary activity and can drop out later if its
+revenue is suppressed for confidentiality; many of Colorado's rural
+eastern-plains and Utah-border counties never enter at all. Colorado's revenue
+source reports by fiscal year for some series, which we align to calendar year
+for pooling. Table~\ref{tab:sumstats_state} reports the resulting county counts:
+32 of New Mexico's 33 counties and 42 of Colorado's 64 counties appear in the
+estimation sample.
+
+\input{tab_sumstats_state.tex}
+
+\subsection{Defining border and interior markets}
+
+We classify markets as \emph{border-exposed} or \emph{interior} using geography
+alone, so that treatment status is fixed before any dispensary chooses where to
+locate. A ZIP code, dispensary, or county is border-exposed if two conditions
+both hold: (i) its centroid (or, for a dispensary, its own address) lies within
+75 miles of a state line shared with a state that has no operating recreational
+cannabis market, and (ii) at least 1,000 residents of that nonlegal state live
+within the same 75-mile reach. The population screen removes sparsely populated
+stretches of state line, such as the empty desert along parts of the
+New Mexico--Texas and Colorado--Utah borders, where proximity to the line
+implies no meaningful cross-border demand. Neighbors with their own operating
+recreational market count as legal: Arizona and Colorado for New Mexico
+(Colorado from January 2022), and Arizona and, from April 2022, New Mexico for
+Colorado. Markets near those borders are treated as interior.
+
+Under this definition, 92 of New Mexico's 368 populated ZIP codes are
+border-exposed and 276 are interior; 436 of its 1,192 dispensaries are
+border-exposed. At the county level, the cross-state comparison in
+Section~\ref{sec:crossstate} classifies 10 of New Mexico's 33 counties and 23 of
+Colorado's 64 counties as border-exposed. Figure~\ref{fig:dispensary_map} maps
+dispensary density and marks the counties that share a land border with a
+nonlegal state (9 in New Mexico, 21 in Colorado); the two counts differ slightly
+because the regression uses the 75-mile centroid rule while the map uses simple
+geographic adjacency. Figure~\ref{fig:spatial_inequality} shows the
+corresponding pattern within New Mexico at the ZIP level. Border and interior
+ZIP codes have almost identical average populations (about 5,700 versus 5,600
+residents), which is reassuring for a design that compares markets of similar
+size differing mainly in their exposure to nonlegal-state demand.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig1_southwest_map.png}
+\caption{Dispensary density and the nonlegal-state border, New Mexico and
+Colorado, 2025. Shading is dispensaries per 1,000 residents in the 2025
+estimation-sample cross-section; counties in white have no dispensary in that
+cross-section. Red outlines mark the counties that share a land border with a
+state that has no operating recreational cannabis market: 9 in New Mexico
+(bordering Texas, Oklahoma, or Utah) and 21 in Colorado (bordering Utah,
+Wyoming, Nebraska, Kansas, or Oklahoma). Counties whose only out-of-state
+neighbors are legal-market states -- Arizona (green), or the shared
+Colorado--New Mexico line, which are legal to each other after April 2022 -- are
+interior. The county-level regressions in Section~\ref{sec:crossstate} instead
+use a 75-mile centroid rule, which classifies 10 New Mexico and 23 Colorado
+counties as border-exposed.}
+\label{fig:dispensary_map}
+\label{map}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_nm_spatial_inequality.png}
+\caption{Spatial inequality in dispensary access, New Mexico. Panel (a): each
+bubble is a ZIP-code centroid, sized by average dispensaries per 1,000
+residents over 2022Q2--2026Q3 and colored by border status. Panel (b):
+population-weighted dispensaries per 1,000 residents (solid bars, left axis) and
+revenue per resident (hatched bars, right axis) for border and interior ZIP
+codes, pooling all ZIP-quarters.}
+\label{fig:spatial_inequality}
+\end{figure}
+
+\subsection{Data sources}
+\label{sec:sources}
+
+\paragraph{Cannabis sales.} New Mexico sales come from the Cannabis Control
+Division's Cannabis Reporting Online Portal \citep{NMCCDReporting}, which
+publishes monthly gross sales by individual licensee and by municipality. We
+aggregate licensee-level sales to the ZIP code, the dispensary, and the county.
+Colorado sales come from the Colorado Department of Revenue's monthly
+county-level series \citep{COMarijuanaSalesByCounty}, spanning 2015 to the
+present; we sum medical and recreational sales and keep only county-years with
+all twelve months reported.
+
+\paragraph{Dispensary locations and counts.} New Mexico dispensary addresses
+come from the Cannabis Control Division's public list of licensed cannabis
+establishments \citep{NMCCDLicensees}; we geocode each address with the U.S.
+Census Bureau's batch geocoder and assign it to a ZIP code and county. Colorado
+dispensary counts come from the Marijuana Enforcement Division's licensee lookup
+\citep{COMedLicensees}, geocoded and assigned to counties by point-in-polygon.
+For New Mexico, licensee-level reporting gives a true count of operating
+dispensaries in every quarter; for Colorado, historical counts are reconstructed
+from the geocoded license file.
+
+\paragraph{Geography and population.} ZIP-code centroid coordinates and
+population come from the SimpleMaps U.S. ZIP database
+\citep{SimpleMapsZIP}, which is built on American Community Survey data. County
+population is the U.S. Census Bureau's Population Estimates Program county total,
+2023 vintage \citep{CensusPopEst2023}, held fixed across a county's panel years.
+The population living within a given radius of a dispensary is computed from
+2020 Census block populations and boundaries \citep{CensusBlocks2020}. State and
+county boundaries are the Census Bureau's 2023 cartographic files
+\citep{CensusCountyShapefile}.
+
+\paragraph{Placebo sectors.} For the falsification tests in
+Section~\ref{sec:falsification}, non-cannabis retail activity comes from the
+New Mexico Taxation and Revenue Department's gross-receipts reports by location
+and industry \citep{NMTRDGrossReceipts} and from the Census Bureau's ZIP Codes
+Business Patterns \citep{CensusZBP}.
+
+\subsection{Outcome variables and summary statistics}
+\label{sec:summarystats}
+
+We study three outcomes, each in natural logs. \textbf{Revenue per capita} is
+total quarterly cannabis sales in a market divided by its population.
+\textbf{Dispensary density} is the number of operating dispensaries per 1,000
+residents. \textbf{Revenue per dispensary} is total quarterly sales divided by
+the dispensary count, and is defined only for markets with at least one
+operating dispensary. Revenue per capita and dispensary density capture the size
+of the local market; revenue per dispensary captures how much any individual
+store earns. Coefficients on log outcomes are reported throughout as percentage
+effects, $(e^{\hat\beta}-1)\times 100$.
+
+Tables~\ref{tab:sumstats_nm} and~\ref{tab:sumstats_state} report summary
+statistics. Three patterns in the raw data preview the results. First, New
+Mexico's border ZIP codes are much larger cannabis markets than its interior
+ZIP codes: they average about six times the quarterly revenue per resident and
+more than three times the dispensary density, even though the two groups have
+nearly identical resident populations. Population-weighting narrows but does not
+close the gap (Figure~\ref{fig:spatial_inequality}b): border ZIP codes still
+support about 1.6 times the dispensary density and 1.7 times the revenue per
+resident of interior ZIP codes. Second, that difference does not appear at the
+individual-store level: border and interior dispensaries earn almost the same
+average quarterly revenue (about \$222{,}000 versus \$202{,}000). Third,
+Colorado's dispensaries earn roughly two and a half times the quarterly revenue
+of New Mexico's, consistent with a more constrained entry environment spreading
+demand across fewer stores.
+
+\input{tab_sumstats_nm.tex}
+
+\paragraph{Limitations.} The panels do not extend before New Mexico's April 2022
+market opening, so the New Mexico analysis compares border and interior markets
+after legalization rather than estimating the effect of legalization itself.
+Population is measured at a single vintage and is not adjusted for the share of
+residents old enough to purchase cannabis. Colorado's dispensary counts are
+reconstructed from a current license file rather than a historical panel, which
+introduces measurement error into Colorado's density and per-store outcomes but
+not its revenue-per-capita outcome. Cross-border demand is proxied by nonlegal
+population within a fixed radius; we do not observe individual consumers'
+residence or travel.

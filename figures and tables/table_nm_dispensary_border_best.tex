@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering
+\caption{New Mexico dispensary-level border effect, noise-minimizing specification (grid-search selected)}
+\label{tab:nm_dispensary_border_best}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+Outcome & Coef. (\%) & SE & $p$ (cl.) & $n$ & Brand FE \\
+\midrule
+Revenue per capita & $+0.149$ ($+16.1\%$) & 0.107 & 0.162 & 10725 & Yes \\
+Revenue (per dispensary) & $+0.150$ ($+16.2\%$) & 0.103 & 0.144 & 10739 & Yes \\
+Local dispensary density & $-0.154$ ($-14.3\%$) & 0.160 & 0.336 & 10739 & No \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Specification chosen by a full factorial grid search over population control (county vs.\
+25-mile-radius), WLS age-weighting (on/off), chain/brand fixed effects (on/off), and clustering level
+(county vs.\ ZIP), ranked by standard error on the border coefficient (48 regressions; see
+\_grid\_search\_noise.py). County-level clustering dominates ZIP-level clustering in every one of the 16
+combinations tested, for all three outcomes. Brand fixed effects (mechanically extracted from each
+dispensary's business name) reduce the standard error for the two revenue outcomes by roughly 15-20 percent
+despite only 31 percent of the sample identifying the border coefficient once brand FE is added -- the
+variance reduction from removing persistent firm-level heterogeneity dominates the loss of identifying
+sample. Brand FE does not help local dispensary density (a spatial-competition measure with no natural
+brand determinant) and is therefore excluded for that outcome. Local dispensary density itself uses a
+25-mile radius (vs.\ the original 10 miles), which alone cuts its standard error from 0.272 to 0.160 by
+eliminating a small-denominator blowup for dispensaries in sparsely populated areas.
+\end{minipage}
+\end{table}

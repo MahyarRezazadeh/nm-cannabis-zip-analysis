@@ -1,0 +1,23 @@
+\begin{table}[htbp]
+\centering
+\caption{New Mexico ZIP-code border effect, address-level (geocoded) border classification}
+\label{tab:nm_zip_geocoded}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+Outcome & Coef. (\%) & $p$ (cl.) & $n$ \\
+\midrule
+Revenue per capita & $+0.680$ ($+97.4%$) & 0.000 & 1564 \\
+Revenue per store & $+0.198$ ($+21.9%$) & 0.146 & 1564 \\
+Dispensary density & $+0.482$ ($+62.0%$) & 0.000 & 1564 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.92\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Border classified from each ZIP's own geocoded dispensary addresses (Census Batch Geocoder,
+86.2\% match rate), majority vote per ZIP, rather than the ZIP centroid; 17 ZIP codes with no successfully
+geocoded dispensary keep the centroid-based classification. County-population control, county-clustered
+standard errors.
+\end{minipage}
+\end{table}

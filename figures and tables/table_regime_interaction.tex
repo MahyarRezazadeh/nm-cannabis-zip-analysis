@@ -1,0 +1,40 @@
+\begin{table}[htbp]
+\centering
+\caption{Border $\times$ Restricted interaction: New Mexico vs. Colorado}
+\label{tab:regime_interaction}
+\footnotesize
+\begin{tabular}{lc}
+\toprule
+Outcome & NM+CO \\
+\midrule
+Revenue per capita & $-0.458$ \\
+ & (0.388) \\
+Dispensary density & $-0.932^{*}$ \\
+ & (0.488) \\
+Revenue per store & $+0.465$ \\
+ & (0.314) \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.5em}
+
+\fontsize{9pt}{11pt}\selectfont
+\textit{Notes:} $\log(y_{cst}) = \alpha + \beta\,\text{Border}_c
++ \theta\,(\text{Border}_c \times \text{Restricted}_s)
++ \delta_{st} + \varepsilon_{cst}$.
+Restricted$_s$ = 1 for Colorado and 0 for New Mexico. Colorado is restricted to
+2022Q2 onward, matching the window we observe for New Mexico, so that every
+Colorado county-quarter in the sample is one in which New Mexico was already
+legal and Colorado's border classification is unambiguous
+(Section~\ref{sec:crossstate}). Both Border$_c$ and Restricted$_s$ are
+time-invariant in this sample, so county fixed effects cannot be added because
+they would absorb the interaction. State $\times$ quarter fixed effects are
+included using a concatenated state-quarter key, and standard errors are
+clustered at the county level. Because the entry regime varies only across two
+states, county clustering addresses within-county serial correlation but cannot
+rule out other persistent state-level differences correlated with the regulatory
+regime. We therefore interpret $\theta$ as the difference in the estimated
+border premium between Colorado and New Mexico, rather than as an unqualified
+causal treatment effect. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{minipage}
+\end{table}

@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{County-level border effect and entry-cap interaction (CO, OR, MT, NM; quarterly)}
+\label{tab:county_border_capped_main}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{Border} & \multicolumn{2}{c}{Border $\times$ Capped} & \\
+Outcome & Coef. (\%) & $p$ (cl.) & Coef. (\%) & $p$ (cl.) & $n$ \\
+\midrule
+Revenue per capita & $+0.860$ ($+136.4\%$) & 0.000 & $-0.720$ ($-51.3\%$) & 0.015 & 3191 \\
+Revenue per store & $+0.619$ ($+85.7\%$) & 0.121 & $-0.439$ ($-35.5\%$) & 0.232 & 1720 \\
+Dispensary density & $+0.241$ ($+27.3\%$) & 0.451 & $-0.126$ ($-11.9\%$) & 0.618 & 1720 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Sample: CO, OR, MT, NM (Washington dropped). Border = county centroid within 75 miles of the
+nonlegal-state line, with $\geq$1,000 nonlegal-state residents within that reach. Capped is the state-year
+entry-cap indicator (CO/MT always capped, NM always free, OR switches capped in 2022). State and state
+$\times$ quarter fixed effects via a single concatenated state-quarter key (avoids phantom empty cells from
+this unbalanced panel). The Capped main effect is exactly collinear with state $\times$ quarter fixed effects
+and is not separately estimated (confirmed by matrix-rank check). County-clustered standard errors.
+\end{minipage}
+\end{table}

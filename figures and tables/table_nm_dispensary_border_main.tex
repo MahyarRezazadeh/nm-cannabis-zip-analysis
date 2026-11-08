@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{New Mexico dispensary-level border effect (75-mile state-line definition)}
+\label{tab:nm_dispensary_border_main}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+Outcome & Coef. (\%) & $p$ (cl.) & $n$ & Border disp. & Interior disp. \\
+\midrule
+Revenue per capita & $+0.042$ ($+4.3\%$) & 0.743 & 10725 & 435 & 753 \\
+Revenue (per dispensary) & $+0.051$ ($+5.2\%$) & 0.685 & 10739 & 436 & 756 \\
+Local dispensary density & $+0.098$ ($+10.3\%$) & 0.719 & 9907 & 411 & 694 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Sample: geocoded New Mexico dispensaries with valid coordinates (1,192 of 1,253).
+Border = dispensary within 75 miles of the nonlegal-state line, with $\geq$1,000 nonlegal-state
+residents within that reach -- the same rule as the paper's main ZIP-code design, applied directly
+to each dispensary's own coordinates rather than aggregated to the ZIP level. County population
+control (in logs), quarter fixed effects, county-clustered standard errors.
+\end{minipage}
+\end{table}

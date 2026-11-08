@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering
+\caption{New Mexico dispensary-level border effect, noise-reduction specification}
+\label{tab:nm_dispensary_border_main_v2}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+Outcome & Coef. (\%) & $p$ (cl.) & $n$ & Border disp. & Interior disp. \\
+\midrule
+Revenue per capita & $+0.199$ ($+22.1\%$) & 0.552 & 10725 & 435 & 753 \\
+Revenue (per dispensary) & $+0.106$ ($+11.2\%$) & 0.576 & 10739 & 436 & 756 \\
+Local dispensary density & $-0.140$ ($-13.1\%$) & 0.462 & 10739 & 436 & 756 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Same border definition as Table~\ref{tab:nm_dispensary_border_main}. Four changes from that
+baseline: (i) local dispensary density uses a 25-mile radius rather than 10 miles, correcting a right-skewed
+ratio driven by near-zero population denominators (max ratio falls from 97.1 to 8.2); (ii) the population
+control is population within that same 25-mile radius rather than county population; (iii) observations are
+weighted by dispensary age in quarters (capped at 8) via WLS, down-weighting brand-new, still-ramping-up
+dispensary-quarters; (iv) standard errors are clustered at the ZIP level (each dispensary's nearest ZIP
+centroid) rather than the county level.
+\end{minipage}
+\end{table}

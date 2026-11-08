@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Dose-response of dispensary outcomes to distance from the nonlegal-state line, New Mexico}
+\label{tab:nm_doseresponse}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+Distance band (mi) & Revenue per capita & Revenue per dispensary & Dispensary density \\
+\midrule
+0-25 & ref. & ref. & ref. \\
+25-50 & $+0.275$ ($+31.6\%$), $p=0.244$ & $+0.277$ ($+31.9\%$), $p=0.235$ & $+0.083$ ($+8.6\%$), $p=0.827$ \\
+50-75 & $+0.054$ ($+5.5\%$), $p=0.810$ & $+0.044$ ($+4.5\%$), $p=0.838$ & $-0.217$ ($-19.5\%$), $p=0.276$ \\
+75-100 & $+0.166$ ($+18.0\%$), $p=0.432$ & $+0.150$ ($+16.2\%$), $p=0.476$ & $-0.634$ ($-46.9\%$), $p=0.002$ \\
+100-125 & $+0.289$ ($+33.5\%$), $p=0.315$ & $+0.291$ ($+33.8\%$), $p=0.308$ & $-0.473$ ($-37.7\%$), $p=0.095$ \\
+125-150 & $+0.257$ ($+29.3\%$), $p=0.244$ & $+0.259$ ($+29.6\%$), $p=0.233$ & $-0.536$ ($-41.5\%$), $p=0.002$ \\
+150-175 & $+0.116$ ($+12.3\%$), $p=0.561$ & $+0.109$ ($+11.5\%$), $p=0.580$ & $-0.675$ ($-49.1\%$), $p=0.000$ \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Each column is a separate regression of the named log outcome on a full set of 25-mile
+distance-band indicators (omitted reference: 0-25 miles, immediately adjacent to the nonlegal-state line), a
+log population control, and quarter fixed effects. The 175-200 mile band is excluded entirely: 75 percent of
+its observations are Bernalillo County (Albuquerque), whose ZIPs average 2.7 times the population of the
+nearest-border band, an urban-agglomeration confound unrelated to border distance. Revenue per capita and
+revenue per dispensary are estimated at the individual dispensary level; dispensary density is estimated at
+the ZIP level (log dispensaries per 1,000 ZIP residents). County-clustered standard errors.
+\end{minipage}
+\end{table}

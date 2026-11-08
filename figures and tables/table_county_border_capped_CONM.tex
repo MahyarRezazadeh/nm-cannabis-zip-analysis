@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering
+\caption{County-level border effect, restricted to Colorado and New Mexico}
+\label{tab:county_border_capped_conm}
+\footnotesize
+\begin{tabular}{lccccc}
+\toprule
+& \multicolumn{2}{c}{Border} & \multicolumn{2}{c}{Border $\times$ Capped} & \\
+Outcome & Coef. (\%) & $p$ (cl.) & Coef. (\%) & $p$ (cl.) & $n$ \\
+\midrule
+Revenue per store & $+0.083$ ($+8.6\%$) & 0.683 & $+0.383$ ($+46.7\%$) & 0.193 & 643 \\
+Dispensary density & $+0.613$ ($+84.6\%$) & 0.027 & $-0.916$ ($-60.0\%$) & 0.054 & 643 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.95\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} Same specification as Table~\ref{tab:county_border_capped_main}, restricted to Colorado and
+New Mexico -- the only two states with a genuinely time-varying (not single-snapshot) dispensary count at
+this frequency. Montana and Oregon's dispensary counts are a fixed current-year snapshot repeated across every
+period, which adds pure noise (not signal) to a quarterly panel; excluding them substantially tightens
+dispensary density's estimate (from $p=0.281$ pooled across all 4 states to $p=0.027$ here). County-clustered
+standard errors.
+\end{minipage}
+\end{table}

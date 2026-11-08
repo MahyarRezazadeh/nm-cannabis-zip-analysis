@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\caption{Border premium estimated separately by state}
+\label{tab:state_specific}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+Outcome & New Mexico & Colorado & Montana \\
+\midrule
+Revenue per capita & $+0.660^{***}$ & $-0.036$ & $+0.420^{*}$ \\
+ & (0.218) & (0.280) & (0.253) \\
+Dispensary density & $+0.595^{**}$ & $-0.337$ & $+0.398^{***}$ \\
+ & (0.282) & (0.400) & (0.116) \\
+Revenue per store & $+0.066$ & $+0.530^{**}$ & $-0.273$ \\
+ & (0.206) & (0.239) & (0.174) \\
+\midrule
+Observations & 360 & 1449 & 422 \\
+Border counties & 10 of 32 & 12 of 42 & 15 of 36 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} $\log(y_{ct}) = \alpha + \beta_s\,\text{Border}_c + \delta_t + \varepsilon_{ct}$, estimated
+separately within each state (equivalently, the state-specific slice of a specification with state $\times$
+quarter fixed effects). Border$_c$ = 1 if county $c$'s centroid lies within 75 miles of the nonlegal-state
+line, with $\geq$1,000 nonlegal-state residents within that reach. Sample truncated to 2025Q2 or earlier.
+County-clustered standard errors. Colorado's border premium is not statistically distinguishable from zero on
+revenue per capita or dispensary density; Montana's is closer in magnitude to New Mexico's. This heterogeneity
+is discussed directly in the text rather than only in the pooled estimate. $^{*}p<0.10$, $^{**}p<0.05$,
+$^{***}p<0.01$.
+\end{minipage}
+\end{table}

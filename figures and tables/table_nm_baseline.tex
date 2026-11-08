@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{New Mexico baseline border-premium estimates, ZIP-quarter panel}
+\label{tab:nm_baseline}
+\footnotesize
+\begin{tabular}{lcccccc}
+\toprule
+Outcome & Coef. & (SE) & Implied \% & $p$ & $N$ & ZIPs \\
+\midrule
+Revenue per capita & $+0.639^{***}$ & (0.223) & +89.4\% & 0.004 & 1704 & 116 \\
+Dispensary density & $+0.383^{***}$ & (0.120) & +46.7\% & 0.001 & 1704 & 116 \\
+Revenue per dispensary & $+0.255^{*}$ & (0.149) & +29.1\% & 0.086 & 1704 & 116 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.98\textwidth}
+\vspace{0.3em}
+\footnotesize
+\textit{Notes:} $\log(y_{zt}) = \alpha + \beta\,\text{Border}_z + \gamma\log(\text{Population}_z) + \delta_t + \varepsilon_{zt}$.
+Border$_z$ is a predetermined, ZIP-geography-only indicator: 1 if the ZIP's own centroid lies within 75 miles of the
+nonlegal-state line (Texas, Oklahoma, or Utah) and at least 1,000 nonlegal-state residents live within that same
+75-mile reach; dispensary locations play no role in the classification. Quarter fixed effects, county-clustered
+standard errors. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{minipage}
+\end{table}
